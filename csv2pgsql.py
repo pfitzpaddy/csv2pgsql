@@ -13,8 +13,13 @@ if __name__ == "__main__":
 	parser.add_argument('--table', '-t', type=str, help='name of table to create in database, i.e. accounts', required=True)
 	args=parser.parse_args()
 
+	# connection
 	engine = create_engine(args.connection)
+	# read data from sql
 	df = pd.read_csv(args.file)
+	# column headers to lowercase
+	df.columns = map(str.lower, df.columns)
+	# data to sql
 	df.to_sql(args.table, engine, if_exists='replace')
 
 	if df.size:
