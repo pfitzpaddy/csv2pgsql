@@ -14,5 +14,5 @@ Import CSV to Postgresql using Pandas
     
 ### Usage
 
-    python csv2pgsql.py -f /Users/fitzpaddy/Documents/data/input.csv  -t shipping -c postgresql://user:pass@localhost/accounts
+    python csv2pgsql.py -f /Users/fitzpaddy/Documents/data/input.csv -s logistics  -t shipping -c postgresql://user:pass@localhost/accounts
 
